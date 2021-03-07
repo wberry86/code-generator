@@ -46,6 +46,12 @@ btn.addEventListener("click", function () {
     getRandomSymbol();
     password.push(getRandomSymbol());
     console.log(getRandomSymbol());
+
+    for (var i = 0; i < numOfChar; i++) {
+      var writePassword = getRandomSymbol[Math.floor(Math.random() * getRandomSymbol.length)];
+      password.push(getRandomSymbol());
+      
+    }
   
   } 
 
@@ -53,6 +59,10 @@ btn.addEventListener("click", function () {
     getRandomNumber();
     password.push(getRandomNumber());
     console.log(getRandomNumber())
+
+    for (var i = 0; i < numOfChar; i++) {
+      var writePassword = getRandomNumber[Math.floor(Math.random() * getRandomNumber.length)];
+      password.push(getRandomNumber());
   
   } 
 
@@ -60,6 +70,10 @@ btn.addEventListener("click", function () {
     getRandomLower();
     password.push(getRandomLower());
     console.log(getRandomLower())
+
+    for (var i = 0; i < numOfChar; i++) {
+      var writePassword = getRandomLower[Math.floor(Math.random() * getRandomLower.length)];
+      password.push(getRandomLower());
   
   } 
 
@@ -67,11 +81,25 @@ btn.addEventListener("click", function () {
     getRandomUpper();
     password.push(getRandomUpper());
     console.log(getRandomUpper())
+
+    for (var i = 0; i < numOfChar; i++) {
+      var writePassword = getRandomUpper[Math.floor(Math.random() * getRandomUpper.length)];
+      password.push(getRandomUpper());
   
   } 
 
-  console.log(password);
-});
+  
+
+  var writePassword = password.join("");
+    UserInput(writePassword);
+    return writePassword;
+
+    function UserInput(writePassword) {
+    document.getElementById("password").textContent = writePassword;
+
+}
+
+}}}});
 
 //generator functions
 function getRandomLower() {
@@ -94,13 +122,14 @@ function getRandomSymbol() {
 i = "";
 var password = [];
 
+
 // if uppercase is true
 // get random value from uppercase array
 // .push that value into password array
 // then take value of password and assigning value to html placeholder
 
 // Write password to the #password input
-
+/*
 function writePassword() {
   var password = document.getElementById("myText").placeholder;
   document.getElementById("demo").innerHTML = password;
@@ -116,7 +145,7 @@ function writePassword() {
 }
 
 
-
+*/
 
 // once all prompts are answered then password is generated that matches criteria
 
