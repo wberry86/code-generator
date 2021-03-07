@@ -4,45 +4,74 @@
 var btn = document.querySelector("#generate");
 
 // a prompt appears asking for certain criteria
-
-// prompt: length of password between 8 and 128 characters
 btn.addEventListener("click", function () {
-  prompt(
+  var numOfChar = prompt(
     "How many characters would you like ypur password to contain? (8-128)"
   );
-  
+  console.log(numOfChar);
 
-  if (true) {
-    confirm("Click OK to confirm including special characters.");
+  if (numOfChar >= 8 && numOfChar <= 128) {
+    var hasSpecial = confirm(
+      "Click OK to confirm including special characters."
+    );
+    console.log(hasSpecial);
 
-    if (true) {
-      confirm("Click OK to include numeric characters.");
+    var hasNum = confirm("Click OK to include numeric characters.");
+    console.log(hasNum);
 
-      if (true) {
-        confirm("Click OK to confirm including lowercase characters.");
+    var hasLower = confirm(
+      "Click OK to confirm including lowercase characters."
+    );
+    console.log(hasLower);
 
-        if (true) {
-          confirm("Click OK to confirm including uppercase characters.");
-        }
-      }
-    }
+    var hasUpper = confirm(
+      "Click OK to confirm including uppercase characters."
+    );
+    console.log(hasUpper);
   }
+  else {
+    window.alert("Please select a number betweeb 8 and 128!");
+
+    
+  }
+
+  // when prompt is answered input should be validated and at least one character type should be selected
+  while (hasSpecial === false && hasNum === false && hasLower === false && hasUpper === false) {
+    alert("You must choose at least one parameter");
+    return numOfChar;
+  }
+
+
+  if (hasSpecial === true) {
+    getRandomSymbol();
+    password.push(getRandomSymbol());
+    console.log(getRandomSymbol());
+  
+  } 
+
+  if (hasNum === true) {
+    getRandomNumber();
+    password.push(getRandomNumber());
+    console.log(getRandomNumber())
+  
+  } 
+
+  if (hasLower === true) {
+    getRandomLower();
+    password.push(getRandomLower());
+    console.log(getRandomLower())
+  
+  } 
+
+  if (hasUpper === true) {
+    getRandomUpper();
+    password.push(getRandomUpper());
+    console.log(getRandomUpper())
+  
+  } 
+
+  console.log(password);
 });
-
-// for random # generator
-for (let i = 0; i < 10; i++) {
-let p = Math.floor(Math.random() * 10) + 1;
-console.log(p);
-}
-
-//do while # generator
-let i = 0;
-do {
-  let p = Math.floor(Math.random() * 10) +1;
-  console.log(p);
-
-  i++;
-} while (i < 10);
 
 //generator functions
 function getRandomLower() {
@@ -62,18 +91,55 @@ function getRandomSymbol() {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
+i = "";
+var password = [];
 
-console.log(getRandomLower);
-console.log(getRandomUpper);
-console.log(getRandomNumber);
-console.log(getRandomSymbol);
-// prompt: types of characters to include (lowercase, uppercase, numeric, and/or special characters)
+// if uppercase is true
+// get random value from uppercase array
+// .push that value into password array
+// then take value of password and assigning value to html placeholder
 
-// when prompt is answered input should be validated and at least one character type should be selected
+// Write password to the #password input
+
+function writePassword() {
+  var password = document.getElementById("myText").placeholder;
+  document.getElementById("demo").innerHTML = password;
+}
+
+
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+
+
 
 // once all prompts are answered then password is generated that matches criteria
 
 // once password is generated, it is either displayed in a prompt  or written on the page
+
+/*
+// for random # generator
+for (let i = 0; i < 10; i++) {
+let p = Math.floor(Math.random() * 10) + 1;
+console.log(p);
+}
+
+//do while # generator
+let i = 0;
+do {
+  let p = Math.floor(Math.random() * 10) +1;
+  console.log(p);
+
+  i++;
+} while (i < 10);
+
+
+
 
 /* Get references to the #generate element
 //var generateBtn = document.querySelector("#generate");
@@ -89,3 +155,9 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);*/
+
+//1. check to make sure that they arent all false
+
+//2. check if each one is true, if they are, get random value and place into the password
+
+//3 once completed populate html placeholder with placeholder value
