@@ -5,6 +5,9 @@ var btn = document.querySelector("#generate");
 
 // a prompt appears asking for certain criteria
 btn.addEventListener("click", function () {
+  UserInput("");
+  password=[];
+
   var numOfChar = prompt(
     "How many characters would you like ypur password to contain? (8-128)"
   );
@@ -28,86 +31,83 @@ btn.addEventListener("click", function () {
       "Click OK to confirm including uppercase characters."
     );
     console.log(hasUpper);
-  }
-  else {
+  } else {
     window.alert("Please select a number betweeb 8 and 128!");
-
-    
   }
 
   // when prompt is answered input should be validated and at least one character type should be selected
-  while (hasSpecial === false && hasNum === false && hasLower === false && hasUpper === false) {
+  while (
+    hasSpecial === false &&
+    hasNum === false &&
+    hasLower === false &&
+    hasUpper === false
+  ) {
     alert("You must choose at least one parameter");
     return numOfChar;
   }
 
-
-  if (hasSpecial === true) {
-    getRandomSymbol();
-    password.push(getRandomSymbol());
-    console.log(getRandomSymbol());
+  if (hasSpecial) {
+    var randomSymbol = getRandomSymbol();
+    password.push(randomSymbol);
 
     for (var i = 0; i < numOfChar; i++) {
-      var writePassword = getRandomSymbol[Math.floor(Math.random() * getRandomSymbol.length)];
+      var writePassword =
+        getRandomSymbol[Math.floor(Math.random() * getRandomSymbol.length)];
       password.push(getRandomSymbol());
-      
     }
-  
-  } 
+  }
 
-  if (hasNum === true) {
-    getRandomNumber();
-    password.push(getRandomNumber());
-    console.log(getRandomNumber())
+  if (hasNum) {
+    var randomNumber = getRandomNumber();
+    password.push(randomNumber);
 
     for (var i = 0; i < numOfChar; i++) {
-      var writePassword = getRandomNumber[Math.floor(Math.random() * getRandomNumber.length)];
+      var writePassword =
+        getRandomNumber[Math.floor(Math.random() * getRandomNumber.length)];
       password.push(getRandomNumber());
-  
-  } 
+    }
+  }
 
-  if (hasLower === true) {
-    getRandomLower();
-    password.push(getRandomLower());
-    console.log(getRandomLower())
+  if (hasLower) {
+    var randomLower = getRandomLower();
+    password.push(randomLower);
 
     for (var i = 0; i < numOfChar; i++) {
-      var writePassword = getRandomLower[Math.floor(Math.random() * getRandomLower.length)];
+      var writePassword =
+        getRandomLower[Math.floor(Math.random() * getRandomLower.length)];
       password.push(getRandomLower());
-  
-  } 
+    }
+  }
 
-  if (hasUpper === true) {
-    getRandomUpper();
-    password.push(getRandomUpper());
-    console.log(getRandomUpper())
+  if (hasUpper) {
+    var randomUpper = getRandomUpper();
+    password.push(randomUpper);
 
     for (var i = 0; i < numOfChar; i++) {
-      var writePassword = getRandomUpper[Math.floor(Math.random() * getRandomUpper.length)];
+      var writePassword =
+        getRandomUpper[Math.floor(Math.random() * getRandomUpper.length)];
       password.push(getRandomUpper());
-  
-  } 
-
-  
+    }
+  }
 
   var writePassword = password.join("");
-    UserInput(writePassword);
-    return writePassword;
+  UserInput(writePassword);
+  return writePassword;
 
-    function UserInput(writePassword) {
-    document.getElementById("password").textContent = writePassword;
+  
+});
 
+function UserInput(writePassword) {
+  document.getElementById("password").textContent = writePassword;
 }
-
-}}}});
 
 //generator functions
 function getRandomLower() {
-  return String.fromCharCode(Math.floor(Math.random() *26) +97);
-} 
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 97);
+}
 
 function getRandomUpper() {
-  return String.fromCharCode(Math.floor(Math.random() * 26) +65);
+  return String.fromCharCode(Math.floor(Math.random() * 26) + 65);
 }
 
 function getRandomNumber() {
@@ -121,7 +121,6 @@ function getRandomSymbol() {
 
 i = "";
 var password = [];
-
 
 // if uppercase is true
 // get random value from uppercase array
