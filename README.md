@@ -9,4 +9,6 @@ Once the page has loaded click the generate password button. A series of prompts
 [Link to Password Generator](https://wberry86.github.io/code-generator/)
 
 
-![code generator screenshot](./friendly-parakeet/assets/images/capture-code-generator)
+[code generator screenshot](https://github.com/wberry86/horiseon-code-refactor/assets/images/capture-code-generator)
+
+
