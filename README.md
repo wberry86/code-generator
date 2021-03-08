@@ -9,6 +9,6 @@ Once the page has loaded click the generate password button. A series of prompts
 [Link to Password Generator](https://wberry86.github.io/code-generator/)
 
 
-[code generator screenshot](https://github.com/wberry86/code-generator/blob/master/assets/images/capture-code-generator.PNG)
+![Code generator screenshot](https://github.com/wberry86/code-generator/blob/master/assets/images/capture-code-generator.PNG)
 
 
