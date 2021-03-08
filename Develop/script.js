@@ -1,12 +1,10 @@
-// Assignment code here
-
-//when button is clicked
+// when button is clicked
 var btn = document.querySelector("#generate");
 
 // a prompt appears asking for certain criteria
 btn.addEventListener("click", function () {
   UserInput("");
-  password=[];
+  password = [];
 
   var numOfChar = prompt(
     "How many characters would you like ypur password to contain? (8-128)"
@@ -35,7 +33,7 @@ btn.addEventListener("click", function () {
     window.alert("Please select a number betweeb 8 and 128!");
   }
 
-  // when prompt is answered input should be validated and at least one character type should be selected
+  // when prompt is answered, input should be validated and at least one character type should be selected
   while (
     hasSpecial === false &&
     hasNum === false &&
@@ -93,8 +91,6 @@ btn.addEventListener("click", function () {
   var writePassword = password.join("");
   UserInput(writePassword);
   return writePassword;
-
-  
 });
 
 function UserInput(writePassword) {
@@ -119,8 +115,9 @@ function getRandomSymbol() {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-i = "";
 var password = [];
+
+//NOTES
 
 // if uppercase is true
 // get random value from uppercase array
@@ -128,6 +125,7 @@ var password = [];
 // then take value of password and assigning value to html placeholder
 
 // Write password to the #password input
+
 /*
 function writePassword() {
   var password = document.getElementById("myText").placeholder;
@@ -144,13 +142,12 @@ function writePassword() {
 }
 
 
-*/
 
 // once all prompts are answered then password is generated that matches criteria
 
 // once password is generated, it is either displayed in a prompt  or written on the page
 
-/*
+
 // for random # generator
 for (let i = 0; i < 10; i++) {
 let p = Math.floor(Math.random() * 10) + 1;
@@ -168,9 +165,8 @@ do {
 
 
 
-
-/* Get references to the #generate element
-//var generateBtn = document.querySelector("#generate");
+// Get references to the #generate element
+// var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
